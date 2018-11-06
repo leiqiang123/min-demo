@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+            margin: 20px 20px;
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+        }
+        .box1{
+            height: 100px;
+            width: 100px;
+            background-color: #f00;
+            margin: 20px 20px;
+        }
+        .box2{
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+            margin: 20px 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <menu>
+        <li>1</li>
+        <li>1</li>
+    </menu> -->
+    <div class="box1">点击我让下面显示</div>
+    <div class="box2"></div>
+</body>
+<script>
+    // $('li').hover(function() {
+    //     $(this).slideToggle()
+    // })
+    $('.box1').click(function(ev) {
+        $('.box2').css('display', 'block')
+        stopBubble(ev)
+    })
+    document.onclick = function(){ 
+        $('.box2').css('display', 'none') 
+    }
+
+    function stopBubble(e) {
+        if(e && e.stopPropagation){
+            e.stopPropagation()
+        }else{
+            window.event.cancelBubble = true
+        }
+    }
+</script>
+</html>
