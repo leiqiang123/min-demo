@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <button>添加</button>
+    <input type="text">
+    <ul id="lists">
+        <li>事件</li>
+    </ul>
+</body>
+<script>
+    $('button').click(function() {
+        let value = $('input').val()
+        $('ul').append($(`<li>${value}</li>`))
+    })
+    // $('ul').on('click', 'li', function(e) {
+    //     var target = $(e.target)
+    //     // target.css("background-color", "red")
+    //     console.log(e)
+    //     alert(target.html())
+    // })
+    var lists = document.getElementById("lists");
+    lists.addEventListener("click",function(event){
+        var target = event.target;
+        //防止父元素ul也触发事件
+        if(target.nodeName == "LI"){
+            //target.style.backgroundColor = "red";
+            // console.log(target)
+            alert(target.innerHTML)
+        }
+        })
+</script>
+</html>
