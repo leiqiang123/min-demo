@@ -30,9 +30,39 @@
     // ctx.fillRect(110, 110, 100, 100)
     // ctx.stroke()
 
-    ctx.arc(100, 100, 50, rad(0), rad(180), false)
-    ctx.closePath()
-    ctx.stroke()
+    // ctx.arc(100, 100, 50, rad(0), rad(180), false)
+    // ctx.closePath()
+    // ctx.stroke()
+
+    //动画
+    // let _rectL = 100
+    // setInterval(() => {
+    //     ctx.clearRect(0,0,800,800)
+    //     ctx.beginPath()
+
+    //     ctx.rect(_rectL, 100, 100, 100)
+    //     ctx.stroke()
+
+    //     _rectL += 1
+    // },16)
+    
+    //动画2
+    // requestAnimationFrame(go)
+    // let _rectL = 100
+    // let vx = 2
+    // function go() {
+    //     ctx.clearRect(0,0,800,800)
+    //     ctx.beginPath()
+
+    //     ctx.rect(_rectL, 100, 100, 100)
+    //     ctx.stroke()
+
+    //     _rectL += vx
+    //     requestAnimationFrame(go)
+    //     if(_rectL > 700 || _rectL < 0){
+    //         vx = -vx
+    //     }
+    // }
 
     function rad(deg) {
         return deg * Math.PI / 180

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        canvas{
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800px" height="800px"></canvas>    
+</body>
+<script>
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    //阴影
+    // ctx.rect(100, 100, 100, 100)
+    // ctx.shadowOffsetX = 10
+    // ctx.shadowOffsetY = 10
+    // ctx.shadowColor = 'rgba(0,0,0,0.5)'
+    // ctx.fill()
+    // ctx.stroke()
+
+    //背景图
+    // var img = new Image()
+    // img.src = './timg.jpg'
+    // img.onload = function() {
+    //     let color = ctx.createPattern(this, 'repeat-x')
+    //     ctx.fillStyle = color
+    //     ctx.rect(0,0,500,500)
+    //     ctx.fill()
+    //     ctx.stroke()
+
+    //     ctx.beginPath()
+    //     ctx.rect(100,100,100,100)
+    //     ctx.fillStyle = 'blue'
+    //     ctx.fill()
+    //     ctx.stroke()
+    // }
+    
+    //渐变
+    let color = ctx.createLinearGradient(0,0,0,100)
+    color.addColorStop(0, '#f00') //第一个参数取值范围0-1
+    color.addColorStop(1, '#ff0') //第一个参数取值范围0-1
+
+    ctx.moveTo(0,50)
+    ctx.lineTo(800,50)
+    ctx.lineWidth = 100
+    ctx.strokeStyle = color
+    ctx.stroke()
+</script>
+</html>
